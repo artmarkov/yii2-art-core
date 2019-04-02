@@ -1,0 +1,38 @@
+{
+    "name": "artsoft/yii2-art-core",
+    "description": "Core Module For Art CMS",
+    "license": "Apache-2.0",
+    "authors": [
+    {
+      "name": "Taras Makitra",
+      "email": "makitrataras@gmail.com"
+    },
+    {
+      "name": "Artur Markov",
+      "email": "artmarkov@mail.ru"
+    }
+  ],
+    "require": {
+        "yiisoft/yii2": "~2.0",
+        "ikimea/browser": "~1.14",
+        "jisoft/yii2-sypexgeo": "*",
+        "yiisoft/yii2-jui": "~2.0",
+        "bower-asset/metisMenu": "*",
+        "omgdef/yii2-multilingual-behavior": "~2.0",
+        "rmrevin/yii2-fontawesome": "~2.12",
+        "2amigos/yii2-transliterator-helper": "*",
+        "kartik-v/yii2-widget-datepicker": "@dev",
+        "kartik-v/yii2-widget-datetimepicker": "*",
+        "kartik-v/yii2-field-range": "dev-master",
+        "nex/yii2-chosen": "*",
+        "himiklab/yii2-sortable-grid-view-widget": "*",
+        "artsoft/yii2-date-range-picker": "*",
+        "yii2mod/yii2-bootstrap-notify": "*",
+        "cjtterabytesoft/yii2-jvectormap": "0.0.1-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "artsoft\\": ""
+        }
+    }
+}
