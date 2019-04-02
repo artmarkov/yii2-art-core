@@ -27,8 +27,7 @@
         "nex/yii2-chosen": "*",
         "himiklab/yii2-sortable-grid-view-widget": "*",
         "artsoft/yii2-date-range-picker": "*",
-        "yii2mod/yii2-bootstrap-notify": "*",
-        "cjtterabytesoft/yii2-jvectormap": "0.0.1-dev"
+        "yii2mod/yii2-bootstrap-notify": "*"
     },
     "autoload": {
         "psr-4": {
