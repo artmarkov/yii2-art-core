@@ -17,18 +17,21 @@ class DashboardController extends BaseController
 
         if ($this->widgets === NULL) {
             $this->widgets = [
-                'artsoft\comment\widgets\dashboard\Comments',
+                'artsoft\user\widgets\dashboard\UsersVisitMap',
                 [
                     'class' => 'artsoft\widgets\dashboard\Info',
                     'position' => 'right',
                 ],
-
+                'artsoft\comment\widgets\dashboard\Comments',
+                [
+                    'class' => 'artsoft\user\widgets\dashboard\Users',
+                    'position' => 'right',
+                ], 
+                'artsoft\post\widgets\dashboard\Posts',
                 [
                     'class' => 'artsoft\media\widgets\dashboard\Media',
                     'position' => 'right',
                 ],
-                'artsoft\post\widgets\dashboard\Posts',
-                'artsoft\user\widgets\dashboard\Users',
             ];
         }
 

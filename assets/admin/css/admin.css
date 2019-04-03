@@ -248,6 +248,7 @@ a:focus {
     margin: -5px 5px 0 0; 
     float:left;
     opacity: 0.9;
+    height: 28px;
 }
 .navbar-brand:hover .art-logo {
     opacity: 1;
