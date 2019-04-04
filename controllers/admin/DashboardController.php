@@ -18,6 +18,7 @@ class DashboardController extends BaseController
         if ($this->widgets === NULL) {
             $this->widgets = [
                 'artsoft\user\widgets\dashboard\UsersVisitMap',
+                'artsoft\user\widgets\dashboard\UsersBrowser',
                 [
                     'class' => 'artsoft\widgets\dashboard\Info',
                     'position' => 'right',
