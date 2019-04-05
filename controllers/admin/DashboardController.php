@@ -16,22 +16,38 @@ class DashboardController extends BaseController
     {
 
         if ($this->widgets === NULL) {
-            $this->widgets = [
-                'artsoft\user\widgets\dashboard\UsersVisitMap',
-                'artsoft\user\widgets\dashboard\UsersBrowser',
+            $this->widgets = [  
                 [
-                    'class' => 'artsoft\widgets\dashboard\Info',
-                    'position' => 'right',
+                    [
+                        'class' => 'col-md-8',
+                        'content' => [
+                            'artsoft\user\widgets\dashboard\UsersVisitMap',
+                        ],   
+                    ],
+                    [
+                        'class' => 'col-md-4',
+                        'content' => [
+                            'artsoft\widgets\dashboard\Info',
+                            'artsoft\user\widgets\dashboard\UsersBrowser',
+                        ],
+                    ],
                 ],
-                'artsoft\comment\widgets\dashboard\Comments',
                 [
-                    'class' => 'artsoft\user\widgets\dashboard\Users',
-                    'position' => 'right',
-                ], 
-                'artsoft\post\widgets\dashboard\Posts',
-                [
-                    'class' => 'artsoft\media\widgets\dashboard\Media',
-                    'position' => 'right',
+                    [
+                        'class' => 'col-md-6',
+                        'content' => [                            
+                            'artsoft\post\widgets\dashboard\Posts',   
+                            'artsoft\comment\widgets\dashboard\Comments',
+                        ],   
+                    ],
+                    
+                    [
+                        'class' => 'col-md-6',
+                        'content' => [                          
+                            'artsoft\user\widgets\dashboard\Users',
+                            'artsoft\media\widgets\dashboard\Media',  
+                        ],
+                    ],
                 ],
             ];
         }

@@ -21,10 +21,6 @@ class DashboardAction extends Action
     {
         $this->controller->getView()->title = Yii::t('art', 'Dashboard');
 
-        if (!is_array($this->widgets)) {
-            throw new NotFoundHttpException(Yii::t('art', 'Invalid settings for dashboard widgets.'));
-        }
-
         $controllerLayout = null;
         if ($this->layout !== null) {
             $controllerLayout = $this->controller->layout;
@@ -62,32 +58,39 @@ class DashboardAction extends Action
      */
     protected function render()
     {
-        $content = '<div class="dashboard"><div class="row"><div class="col-md-12">';
 
-        foreach ($this->widgets as $widget) {
-            if (is_string($widget)) {
+        $content = '<div class="dashboard">';
+        
+        foreach ($this->widgets as $row) {
 
-                $content .= $widget::widget();
+            $content .= '<div class="row">';
 
-            } elseif (is_array($widget)) {
+            foreach ($row as $col) {
 
-                if (!isset($widget['class'])) {
+                if (!isset($col['class']))
+                {
                     throw new NotFoundHttpException(Yii::t('art', 'Invalid settings for dashboard widgets.'));
                 }
 
-                $class = $widget['class'];
-                $settings = $widget;
-                unset($settings['class']);
-                $content .= $class::widget($settings);
-
-            } else {
-                throw new NotFoundHttpException(Yii::t('art', 'Invalid settings for dashboard widgets.'));
+                $content .= '<div class=' . $col['class'] . '>';
+                
+                foreach ($col['content'] as $widget) {
+                    if (is_string($widget))
+                    {
+                        $content .= $widget::widget();
+                    }
+                    else  {
+                        throw new NotFoundHttpException(Yii::t('art', 'Invalid settings for dashboard widgets.'));
+                    }
+                }
+                $content .= '</div>';
             }
+            $content .= '</div>';
         }
+        $content .= '</div>';
 
-        $content .= '</div></div></div>';
 
         return $this->controller->renderContent($content);
-
     }
+
 }
