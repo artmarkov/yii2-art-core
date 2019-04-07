@@ -39,7 +39,7 @@ MetisMenuAsset::register($this);
             'brandLabel' => Html::img($logo, ['class' => 'art-logo', 'alt' => 'ArtSoft CMS']) . '<b>ArtSoft</b> ' . Yii::t('art', 'Control Panel'),
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
-                'class' => 'navbar-inverse navbar-static-top',
+                'class' => 'navbar-default navbar-static-top', //navbar-inverse
                 'style' => 'margin-bottom: 0'
             ],
             'innerContainerOptions' => [
@@ -92,7 +92,6 @@ MetisMenuAsset::register($this);
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]) ?>
 
                     <?php if (Yii::$app->session->hasFlash('crudMessage')): ?>
                         <div class="alert alert-info alert-dismissible alert-crud" role="alert">
@@ -103,6 +102,8 @@ MetisMenuAsset::register($this);
                         </div>
                     <?php endif; ?>
 
+                    <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]) ?>
+                    
                     <?= $content ?>
                 </div>
             </div>

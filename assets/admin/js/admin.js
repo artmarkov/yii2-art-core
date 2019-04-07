@@ -32,7 +32,7 @@ $(function () {
         return this.href === url || this.href === url + '/';
     });
 
-    current.addClass('active');
+    current.addClass('mm-active');
 
     //Find most suitable links
     if (current.length === 0) {
@@ -55,7 +55,7 @@ $(function () {
         });
 
         $(suitableLinks).each(function () {
-            $(this).addClass('active');
+            $(this).addClass('mm-active');
         });
     }
 
@@ -64,7 +64,7 @@ $(function () {
     }).parent().parent().addClass('mm-show').parent();
 
     if (element.is('li')) {
-        element.addClass('active');
+        element.addClass('mm-active');
     }
 });
 /********* METIS-MENU SCRIPTS END ************/
