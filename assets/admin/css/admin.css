@@ -149,7 +149,8 @@ a:focus {
 }
 
 .record-info .form-group .btn {
-    width: 48%;
+    width: 49%;
+    margin-bottom: 5px;
 }
 
 .record-info .form-group .btn-file-input {
