@@ -73,7 +73,7 @@ class m150319_194321_init_menus extends yii\db\Migration
         $this->insert(self::TABLE_NAME, ['id' => 'admin-menu', 'created_by' => 1]);
         $this->insert(self::TABLE_LANG_NAME, ['menu_id' => 'admin-menu', 'language' => 'en-US', 'title' => 'Control Panel Menu']);
 
-        $this->insert(self::TABLE_LINK_NAME, ['id' => 'dashboard', 'menu_id' => 'admin-menu', 'link' => '/', 'image' => 'home', 'created_by' => 1, 'order' => 1]);
+        $this->insert(self::TABLE_LINK_NAME, ['id' => 'dashboard', 'menu_id' => 'admin-menu', 'link' => '/site/index', 'image' => 'home', 'created_by' => 1, 'order' => 1]);
         $this->insert(self::TABLE_LINK_LANG_NAME, ['link_id' => 'dashboard', 'label' => 'Dashboard', 'language' => 'en-US']);
     }
 
