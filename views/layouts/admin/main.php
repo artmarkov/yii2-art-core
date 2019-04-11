@@ -34,12 +34,12 @@ MetisMenuAsset::register($this);
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 
         <?php
-        $logo = $assetBundle->baseUrl . '/images/art-logo.png';
+        $logo = $assetBundle->baseUrl . '/images/art-logo-inverse.png';
         NavBar::begin([
             'brandLabel' => Html::img($logo, ['class' => 'art-logo', 'alt' => 'ArtSoft CMS']) . '<b>ArtSoft</b> ' . Yii::t('art', 'Control Panel'),
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
-                'class' => 'navbar-default navbar-static-top', //navbar-inverse
+                'class' => 'navbar-inverse navbar-static-top', //navbar-inverse navbar-default
                 'style' => 'margin-bottom: 0'
             ],
             'innerContainerOptions' => [

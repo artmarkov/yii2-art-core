@@ -1,4 +1,4 @@
-// Simplex 3.3.6
+// Simplex 3.4.1
 // Variables
 // --------------------------------------------------
 
@@ -15,10 +15,10 @@
 @gray-lighter:           #ddd; 
 
 @brand-primary:         #36517b;
-@brand-success:         #5cb85c;
-@brand-info:            #6579a1;
-@brand-warning:         #f0ad4e;
-@brand-danger:          #d9534f;
+@brand-success:         #468847;
+@brand-info:            #3a87ad;
+@brand-warning:         #e28b00;
+@brand-danger:          #b94a48;
 
 
 //== Scaffolding
@@ -395,7 +395,7 @@
 @navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
 // Inverted navbar links
-@navbar-inverse-link-color:                 lighten(@gray, 40%);
+@navbar-inverse-link-color:                 lighten(@gray, 45%);
 @navbar-inverse-link-hover-color:           #fff;
 @navbar-inverse-link-hover-bg:              transparent;
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
@@ -472,12 +472,12 @@
 @pager-border:                         @pagination-border;
 @pager-border-radius:                  15px;
 
-@pager-hover-bg:                       @brand-primary;
+@pager-hover-bg:                       @gray-lighter;
 
-@pager-active-bg:                      @brand-primary;
-@pager-active-color:                   #fff;
+@pager-active-bg:                      @pagination-active-bg;
+@pager-active-color:                   @pagination-active-color;
 
-@pager-disabled-color:                 @gray-lighter;
+@pager-disabled-color:                 @pagination-disabled-color;
 
 
 //== Jumbotron
@@ -496,21 +496,21 @@
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-@state-success-text:             #468847;
+@state-success-text:             #3c763d;
 @state-success-bg:               #dff0d8;
 @state-success-border:           darken(spin(@state-success-bg, -10), 5%);
 
-@state-info-text:                #3a87ad;
+@state-info-text:                #31708f;
 @state-info-bg:                  #d9edf7;
 @state-info-border:              darken(spin(@state-info-bg, -10), 7%);
 
-@state-warning-text:             #c09853;
+@state-warning-text:             #b08b4c;
 @state-warning-bg:               #fcf8e3;
-@state-warning-border:           darken(spin(@state-warning-bg, -10), 3%);
+@state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
 
-@state-danger-text:              #b94a48;
+@state-danger-text:              #a94442;
 @state-danger-bg:                #f2dede;
-@state-danger-border:            darken(spin(@state-danger-bg, -10), 3%);
+@state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
 
 
 //== Tooltips
@@ -720,21 +720,21 @@
 @panel-primary-border:        @brand-primary;
 @panel-primary-heading-bg:    @brand-primary;
 
-@panel-success-text:          #fff;
-@panel-success-border:        @brand-success;
-@panel-success-heading-bg:    @brand-success;
+@panel-success-text:          @state-success-text;
+@panel-success-border:        @state-success-border;
+@panel-success-heading-bg:    @state-success-bg;
 
-@panel-info-text:             #fff;
-@panel-info-border:           @brand-info;
-@panel-info-heading-bg:       @brand-info;
+@panel-info-text:             @state-info-text;
+@panel-info-border:           @state-info-border;
+@panel-info-heading-bg:       @state-info-bg;
 
-@panel-warning-text:          #fff;
-@panel-warning-border:        @brand-warning;
-@panel-warning-heading-bg:    @brand-warning;
+@panel-warning-text:          @state-warning-text;
+@panel-warning-border:        @state-warning-border;
+@panel-warning-heading-bg:    @state-warning-bg;
 
-@panel-danger-text:           #fff;
-@panel-danger-border:         @brand-danger;
-@panel-danger-heading-bg:     @brand-danger;
+@panel-danger-text:           @state-danger-text;
+@panel-danger-border:         @state-danger-border;
+@panel-danger-heading-bg:     @state-danger-bg;
 
 
 //== Thumbnails
