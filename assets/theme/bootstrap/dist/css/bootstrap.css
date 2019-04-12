@@ -5186,7 +5186,7 @@ a.thumbnail.active {
   line-height: 17px;
   color: #fff;
   text-align: center;
-  background-color: #36517b;
+  background-color: #4d74b0;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -5207,7 +5207,7 @@ a.thumbnail.active {
   animation: progress-bar-stripes 2s linear infinite;
 }
 .progress-bar-success {
-  background-color: #468847;
+  background-color: #69b26a;
 }
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -5223,7 +5223,7 @@ a.thumbnail.active {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-warning {
-  background-color: #e28b00;
+  background-color: #ffaf30;
 }
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -5231,7 +5231,7 @@ a.thumbnail.active {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-danger {
-  background-color: #b94a48;
+  background-color: #ce817f;
 }
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -5495,8 +5495,8 @@ button.list-group-item-danger.active:focus {
 .panel {
   margin-bottom: 17px;
   background-color: #fff;
-  border-top: 3px solid transparent;
-  /*border-radius: @panel-border-radius;*/
+  border: 1px solid transparent;
+  border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -5746,94 +5746,94 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #36517b;
+  border-color: #4d74b0;
 }
 .panel-primary > .panel-heading {
   color: #36517b;
-  background-color: #fff;
-  border-color: #ddd;
+  background-color: #36517b;
+  border-color: #4d74b0;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #36517b;
+  border-top-color: #4d74b0;
 }
 .panel-primary > .panel-heading .badge {
-  color: #fff;
+  color: #36517b;
   background-color: #36517b;
 }
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #36517b;
+  border-bottom-color: #4d74b0;
 }
 .panel-success {
-  border-color: #d6e9c6;
+  border-color: #69b26a;
 }
 .panel-success > .panel-heading {
   color: #3c763d;
-  background-color: #fff;
-  border-color: #ddd;
+  background-color: #dff0d8;
+  border-color: #69b26a;
 }
 .panel-success > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #d6e9c6;
+  border-top-color: #69b26a;
 }
 .panel-success > .panel-heading .badge {
-  color: #fff;
+  color: #dff0d8;
   background-color: #3c763d;
 }
 .panel-success > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #d6e9c6;
+  border-bottom-color: #69b26a;
 }
 .panel-info {
-  border-color: #bce8f1;
+  border-color: #67abcc;
 }
 .panel-info > .panel-heading {
   color: #31708f;
-  background-color: #fff;
-  border-color: #ddd;
+  background-color: #d9edf7;
+  border-color: #67abcc;
 }
 .panel-info > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #bce8f1;
+  border-top-color: #67abcc;
 }
 .panel-info > .panel-heading .badge {
-  color: #fff;
+  color: #d9edf7;
   background-color: #31708f;
 }
 .panel-info > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #bce8f1;
+  border-bottom-color: #67abcc;
 }
 .panel-warning {
-  border-color: #faebcc;
+  border-color: #ffaf30;
 }
 .panel-warning > .panel-heading {
   color: #b08b4c;
-  background-color: #fff;
-  border-color: #ddd;
+  background-color: #fcf8e3;
+  border-color: #ffaf30;
 }
 .panel-warning > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #faebcc;
+  border-top-color: #ffaf30;
 }
 .panel-warning > .panel-heading .badge {
-  color: #fff;
+  color: #fcf8e3;
   background-color: #b08b4c;
 }
 .panel-warning > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #faebcc;
+  border-bottom-color: #ffaf30;
 }
 .panel-danger {
-  border-color: #ebccd1;
+  border-color: #ce817f;
 }
 .panel-danger > .panel-heading {
   color: #a94442;
-  background-color: #fff;
-  border-color: #ddd;
+  background-color: #f2dede;
+  border-color: #ce817f;
 }
 .panel-danger > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #ebccd1;
+  border-top-color: #ce817f;
 }
 .panel-danger > .panel-heading .badge {
-  color: #fff;
+  color: #f2dede;
   background-color: #a94442;
 }
 .panel-danger > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #ebccd1;
+  border-bottom-color: #ce817f;
 }
 .embed-responsive {
   position: relative;
@@ -7040,5 +7040,124 @@ button.close {
   background: -moz-linear-gradient(top, #468847, #7aba7b);
   background: -ms-linear-gradient(top, #468847, #7aba7b);
   background: -o-linear-gradient(top, #468847, #7aba7b);
+}
+.panel {
+  margin-bottom: 17px;
+  background-color: #fff;
+  border-top: 3px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-default {
+  border-color: #ddd;
+}
+.panel-default > .panel-heading {
+  color: #444;
+  background-color: #fefefe;
+  border-color: #ddd;
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ddd;
+}
+.panel-default > .panel-heading .badge {
+  color: #fefefe;
+  background-color: #444;
+}
+.panel-default > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ddd;
+}
+.panel-primary {
+  border-color: #4d74b0;
+}
+.panel-primary > .panel-heading {
+  color: #36517b;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #4d74b0;
+}
+.panel-primary > .panel-heading .badge {
+  color: #fff;
+  background-color: #36517b;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #4d74b0;
+}
+.panel-success {
+  border-color: #69b26a;
+}
+.panel-success > .panel-heading {
+  color: #3c763d;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #69b26a;
+}
+.panel-success > .panel-heading .badge {
+  color: #fff;
+  background-color: #3c763d;
+}
+.panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #69b26a;
+}
+.panel-info {
+  border-color: #67abcc;
+}
+.panel-info > .panel-heading {
+  color: #31708f;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #67abcc;
+}
+.panel-info > .panel-heading .badge {
+  color: #fff;
+  background-color: #31708f;
+}
+.panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #67abcc;
+}
+.panel-warning {
+  border-color: #ffaf30;
+}
+.panel-warning > .panel-heading {
+  color: #b08b4c;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ffaf30;
+}
+.panel-warning > .panel-heading .badge {
+  color: #fff;
+  background-color: #b08b4c;
+}
+.panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ffaf30;
+}
+.panel-danger {
+  border-color: #ce817f;
+}
+.panel-danger > .panel-heading {
+  color: #a94442;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ce817f;
+}
+.panel-danger > .panel-heading .badge {
+  color: #fff;
+  background-color: #a94442;
+}
+.panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ce817f;
 }
 /*# sourceMappingURL=bootstrap.css.map */
