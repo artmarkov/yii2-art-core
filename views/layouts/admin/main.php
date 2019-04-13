@@ -2,7 +2,6 @@
 
 use backend\assets\AppAsset;
 use artsoft\assets\MetisMenuAsset;
-use asinfotrack\yii2\flagicons\assets\FlagIconAsset;
 use artsoft\assets\ArtAsset;
 use artsoft\models\Menu;
 use artsoft\widgets\LanguageSelector;
@@ -17,7 +16,6 @@ use yii\widgets\Breadcrumbs;
 AppAsset::register($this);
 $assetBundle = ArtAsset::register($this);
 MetisMenuAsset::register($this);
-FlagIconAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -69,25 +67,8 @@ FlagIconAsset::register($this);
             'items' => $menuItems,
         ]);
 
-       // echo LanguageSelector::widget(['display' => 'label', 'view' => 'pills']);
-
-
-        $languageItem = new cetver\LanguageSelector\items\DropDownLanguageItem([
-             'languages' => [
-                 'en-US' => '<span class="flag-icon flag-icon-us"></span> English',
-                 'ru' => '<span class="flag-icon flag-icon-ru"></span> Russian',
-             ],
-             'options' => ['encode' => false],
-         ]);
-
-         echo \yii\bootstrap\Nav::widget([
-             'options' => ['class' => 'navbar-nav navbar-right'],
-             'items' => [         
-                 $languageItem->toArray()
-             ]
-         ]);
-
-
+        echo LanguageSelector::widget(['display' => 'label']);
+        
         NavBar::end();
         ?>
 

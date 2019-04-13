@@ -17,10 +17,6 @@ class LanguageSelectorAsset extends AssetBundle
     {
         $this->sourcePath = __DIR__ . '/source/language-selector';
 
-        $this->js = [
-            //'js/language.js',
-        ];
-
         $this->css = [
             'css/language-selector.css',
         ];
