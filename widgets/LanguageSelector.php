@@ -4,7 +4,7 @@ namespace artsoft\widgets;
 
 use Yii;
 use asinfotrack\yii2\flagicons\Flag;
-use cetver\LanguageSelector\items\DropDownLanguageItem;
+use artsoft\components\DropDownLanguageItem;
 use artsoft\widgets\assets\LanguageSelectorAsset;
 use yii\bootstrap\Nav;
 use yii\helpers\Html;
@@ -29,7 +29,7 @@ class LanguageSelector extends \yii\base\Widget
      *
      * @var type array
      */
-    public $code_redirect = ['en-US' => 'us'];
+    public $code_redirect = ['en-US' => 'gb'];
     
     /**
      *
