@@ -4,14 +4,25 @@ namespace artsoft\widgets;
 
 use Yii;
 use asinfotrack\yii2\flagicons\Flag;
-use artsoft\components\DropDownLanguageItem;
-use artsoft\widgets\assets\LanguageSelectorAsset;
-use yii\bootstrap\Nav;
 use yii\helpers\Html;
 
+/**
+ *  echo artsoft\widgets\LanguageSelector::widget([
+ *       'display' => 'label', 
+ *       'flag_visible' => true, 
+ *       'options' => ['class' => 'navbar-nav navbar-left'],
+ *       'code_redirect' => ['en-US' => 'us'],
+ *   ]); 
+ */
 
 class LanguageSelector extends \yii\base\Widget
 {
+    /**
+     *
+     * @var string  links | dropdown
+     */
+    public $view = 'dropdown';
+    
     /**
      *
      * @var string  code | label
@@ -35,7 +46,7 @@ class LanguageSelector extends \yii\base\Widget
      *
      * @var type array
      */
-    public $options = ['class' => 'navbar-nav navbar-right'];
+    public $options = ['class' => 'navbar-nav navbar-right']; // navbar-nav navbar-right nav
     
     /**
      * Returns language shortcode from its redirect.
@@ -58,8 +69,6 @@ class LanguageSelector extends \yii\base\Widget
             return;
         }
        
-        LanguageSelectorAsset::register($this->view);
-        
         foreach (Yii::$app->art->languages as $key => $label) :
 
             $item[$key] = $this->flag_visible ? Flag::icon($this->getCountryCode($key)) : NULL;
@@ -67,16 +76,9 @@ class LanguageSelector extends \yii\base\Widget
 
         endforeach;
 
-        $languageItem = new DropDownLanguageItem([
-             'languages' => $item,
-             'options' => ['encode' => false],
-         ]);
-
-        echo Nav::widget([
-             'options' => $this->options,
-             'items' => [         
-                 $languageItem->toArray()
-             ]
+        return $this->render($this->view, [
+            'item' => $item,
+            'options' => $this->options,
         ]);
     }
 }
