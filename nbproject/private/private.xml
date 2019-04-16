@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/domains/yii2-art-cms/vendor/artsoft/yii2-art-core/widgets/views/links.php</file>
-            <file>file:/domains/yii2-art-cms/vendor/artsoft/yii2-art-core/widgets/views/dropdown.php</file>
-            <file>file:/domains/yii2-art-cms/vendor/artsoft/yii2-art-core/widgets/LanguageSelector.php</file>
-            <file>file:/domains/yii2-art-cms/vendor/artsoft/yii2-art-core/views/layouts/admin/main.php</file>
+            <file>file:/C:/OSPanel/domains/yii2-art-cms/vendor/artsoft/yii2-art-core/assets/ArtAsset.php</file>
+            <file>file:/C:/OSPanel/domains/yii2-art-cms/vendor/artsoft/yii2-art-core/views/layouts/admin/main.php</file>
+            <file>file:/C:/OSPanel/domains/yii2-art-cms/vendor/artsoft/yii2-art-core/widgets/LanguageSelector.php</file>
+            <file>file:/C:/OSPanel/domains/yii2-art-cms/vendor/artsoft/yii2-art-core/components/languageSelector/items/DropDownLanguageItem.php</file>
+            <file>file:/C:/OSPanel/domains/yii2-art-cms/vendor/artsoft/yii2-art-core/assets/admin/css/admin.css</file>
         </group>
     </open-files>
 </project-private>
