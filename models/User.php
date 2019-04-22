@@ -89,7 +89,7 @@ class User extends UserIdentity
         return [
             [['username', 'email'], 'required'],
             ['username', 'unique'],
-            ['username', 'match', 'pattern' => Yii::$app->art->usernameRegexp, 'message' => Yii::t('art/auth', 'The username should contain only Latin letters, numbers and the following characters: "-" and "_".')],
+            ['username', 'match', 'pattern' => Yii::$app->art->usernameRegexp, 'message' => Yii::t('art/auth', 'The username should contain only Latin letters, numbers and the following characters: "_".')],
             ['username', 'match', 'not' => true, 'pattern' => Yii::$app->art->usernameBlackRegexp, 'message' => Yii::t('art/auth', 'Username contains not allowed characters or words.')],
             [['username', 'email', 'bind_to_ip'], 'trim'],
             [['status', 'email_confirmed'], 'integer'],

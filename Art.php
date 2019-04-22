@@ -89,6 +89,13 @@ class Art extends Component
      */
     public $usernameRegexp = '/^(\w|\d)+$/';
 
+     /**
+     * Pattern that will be applied for user names on users form in RUSS
+     *
+     * @var string
+     */
+    public $cyrillicRegexp = '/^[а-яёА-ЯЁ]+$/iu';
+    
     /**
      * Pattern that describe what names should not be allowed for username on 
      * registration. Default pattern does not allow anything having "admin".

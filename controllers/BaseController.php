@@ -30,7 +30,7 @@ abstract class BaseController extends Controller
     {
         return [
             'error' => [
-                'class' => 'yii\web\ErrorAction',
+                'class' => 'artsoft\web\ErrorAction',
             ],
         ];
     }
