@@ -384,11 +384,11 @@ abstract class BaseController extends \artsoft\controllers\BaseController
             if ($this->enableOnlyActions !== [] AND in_array($action->id, $this->_implementedActions) AND
                 !in_array($action->id, $this->enableOnlyActions)
             ) {
-                throw new NotFoundHttpException('Page not found');
+                throw new NotFoundHttpException(Yii::t('yii', 'Page not found.'));
             }
 
             if (in_array($action->id, $this->disabledActions)) {
-                throw new NotFoundHttpException('Page not found');
+                throw new NotFoundHttpException(Yii::t('yii', 'Page not found.'));
             }
 
             return true;
