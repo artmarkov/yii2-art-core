@@ -10,6 +10,7 @@ class RadioToggle extends InputWidget
 {
     public $items = [];
     public $inline = false;
+    public $btn_class = 'btn btn-default';
 
     /**
      * Runs the widget.
@@ -34,7 +35,7 @@ class RadioToggle extends InputWidget
 
                 $checked = ($value == $id) ? true : false;
                 $options = [
-                    'class' => 'btn btn-default' . (($checked) ? ' active' : ''),
+                    'class' => $this->btn_class . (($checked) ? ' active' : ''),
                     'data-toggle' => $toogle,
                     ];
                 $radio = Html::radio($name, $checked, ['class' => 'non-styler', 'value' => $id]);
