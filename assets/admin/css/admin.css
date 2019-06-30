@@ -149,7 +149,7 @@ a:focus {
 }
 
 .record-info .form-group .btn {
-    width: 49%;
+    width: auto;
     margin-bottom: 5px;
 }
 
