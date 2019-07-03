@@ -28,7 +28,8 @@
         "yii2mod/yii2-bootstrap-notify": "*",
         "2amigos/yii2-chartjs-widget" : "~2.0",
         "antishov/yii2-morrisjs": "^1.1",
-        "asinfotrack/yii2-flagicons": "^1.1"   
+        "asinfotrack/yii2-flagicons": "^1.1",
+        "trntv/yii2-aceeditor": "^2.0.0"
     },
     "autoload": {
         "psr-4": {
