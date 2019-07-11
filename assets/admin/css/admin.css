@@ -283,3 +283,12 @@ div.e404 {
 	line-height:200px;
 	color:#ddd;
 }
+.dw-media-image {
+    
+    margin-right: 10px !important;
+}
+img.dw-media-image {
+        width: 128px;
+        border: 1px solid #888;
+        border-radius: 5px;
+}
