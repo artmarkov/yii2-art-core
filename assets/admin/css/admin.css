@@ -115,6 +115,7 @@ a:focus {
 .grid-view .action-title {
     display: inline-block;
     padding-bottom: 20px;
+    white-space: nowrap;
 }
 
 .grid-view tbody tr:hover .quick-actions {
@@ -128,6 +129,7 @@ a:focus {
 .quick-actions {
     font-size: 0.9em;
     margin-top: 2px;
+    white-space: nowrap;
 }
 
 .quick-actions a {
