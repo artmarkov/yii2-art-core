@@ -3118,7 +3118,7 @@ select[multiple].input-lg {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  color: #fff;
+  color: #3b5876;
   text-decoration: none;
 }
 .btn:active,
@@ -3142,28 +3142,28 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #fff;
-  background-color: #474949;
-  border-color: #474949;
+  color: #3b5876;
+  background-color: #fff;
+  border-color: #ddd;
 }
 .btn-default:focus,
 .btn-default.focus {
-  color: #fff;
-  background-color: #2e2f2f;
-  border-color: #080808;
+  color: #3b5876;
+  background-color: #e6e6e6;
+  border-color: #9d9d9d;
 }
 .btn-default:hover {
-  color: #fff;
-  background-color: #2e2f2f;
-  border-color: #292a2a;
+  color: #3b5876;
+  background-color: #e6e6e6;
+  border-color: #bebebe;
 }
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #fff;
-  background-color: #2e2f2f;
+  color: #3b5876;
+  background-color: #e6e6e6;
   background-image: none;
-  border-color: #292a2a;
+  border-color: #bebebe;
 }
 .btn-default:active:hover,
 .btn-default.active:hover,
@@ -3174,9 +3174,9 @@ fieldset[disabled] a.btn {
 .btn-default:active.focus,
 .btn-default.active.focus,
 .open > .dropdown-toggle.btn-default.focus {
-  color: #fff;
-  background-color: #1c1d1d;
-  border-color: #080808;
+  color: #3b5876;
+  background-color: #d4d4d4;
+  border-color: #9d9d9d;
 }
 .btn-default.disabled:hover,
 .btn-default[disabled]:hover,
@@ -3187,12 +3187,12 @@ fieldset[disabled] .btn-default:focus,
 .btn-default.disabled.focus,
 .btn-default[disabled].focus,
 fieldset[disabled] .btn-default.focus {
-  background-color: #474949;
-  border-color: #474949;
+  background-color: #fff;
+  border-color: #ddd;
 }
 .btn-default .badge {
-  color: #474949;
-  background-color: #fff;
+  color: #fff;
+  background-color: #3b5876;
 }
 .btn-primary {
   color: #fff;
@@ -4922,11 +4922,11 @@ a.label:focus {
   top: -1px;
 }
 .label-default {
-  background-color: #474949;
+  background-color: #777;
 }
 .label-default[href]:hover,
 .label-default[href]:focus {
-  background-color: #2e2f2f;
+  background-color: #5e5e5e;
 }
 .label-primary {
   background-color: #3b5876;
