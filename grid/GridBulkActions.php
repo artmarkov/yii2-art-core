@@ -32,7 +32,7 @@ class GridBulkActions extends Widget
     /**
      * @var string
      */
-    public $okButtonClass = 'btn btn-sm btn-default';
+    public $okButtonClass = 'btn btn-sm btn-primary';
 
     /**
      * @var string
