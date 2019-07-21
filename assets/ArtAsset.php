@@ -4,6 +4,7 @@ namespace artsoft\assets;
 
 use yii\web\AssetBundle;
 use yii\web\JqueryAsset;
+use yii\web\View;
 
 /**
  * Class ArtAsset
@@ -36,4 +37,19 @@ class ArtAsset extends AssetBundle
 
         parent::init();
     }
+    /**
+     * Registers this asset bundle with a view.
+     * @param \yii\web\View $view the view to be registered with
+     * @return static the registered asset bundle instance
+     */
+//    public static function register($view)
+//    {
+//        $js = <<<JS
+//            $('[data-toggle="tooltip"]').tooltip()
+//JS;
+//
+//        $view->registerJs($js, View::POS_READY);
+//
+//        return parent::register($view);
+//    }
 }
