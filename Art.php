@@ -220,15 +220,14 @@ class Art extends Component
     /**
      * @inheritdoc
      */
-    public function init()
-    {
-        parent::init();
+    public function init() {
+        parent::init();        
+        $this->initFormatter();
 
         if (Yii::$app->id != 'console') {
             $this->registerTranslations();
             $this->initLanguageOptions();
             $this->initEmailOptions();
-            $this->initFormatter();
         }
     }
 
