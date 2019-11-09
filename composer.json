@@ -16,6 +16,7 @@
         "yiisoft/yii2": "~2.0",        
         "yiisoft/yii2-jui": "~2.0",
         "bower-asset/metisMenu": "*",
+        "bower-asset/pace": "*",
         "omgdef/yii2-multilingual-behavior": "~2.0",
         "rmrevin/yii2-fontawesome": "~2.12",
         "2amigos/yii2-transliterator-helper": "*",
