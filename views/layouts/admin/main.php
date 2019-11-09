@@ -92,16 +92,15 @@ MetisMenuAsset::register($this);
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-
-                    <?php if (Yii::$app->session->hasFlash('crudMessage')): ?>
-                        <div class="alert alert-info alert-dismissible alert-crud" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <?= Yii::$app->session->getFlash('crudMessage') ?>
-                        </div>
-                    <?php endif; ?>
-
+                    <?= \yii2mod\notify\BootstrapNotify::widget([
+                        'clientOptions' => [
+                            'offset' => [
+                                'x' => 20,
+                                'y' => 50,
+                            ],
+                        ]
+                    ]);
+                    ?>  
                     <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]) ?>
                     
                     <?= $content ?>
