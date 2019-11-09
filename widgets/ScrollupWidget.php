@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * 
+ * add to main.php before endBody() 
+ * artsoft\widgets\ScrollupWidget::widget();
+ * 
+ */
+
 namespace artsoft\widgets;
 
 use yii\base\Widget;
