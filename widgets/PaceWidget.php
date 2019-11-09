@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * 
+ * add to main.php after beginBody() 
+ * artsoft\widgets\PaceWidget::widget();
+ * 
+ */
+
 namespace artsoft\widgets;
 
 use yii\base\Widget;

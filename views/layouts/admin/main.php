@@ -29,7 +29,7 @@ MetisMenuAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>    
-<?= artsoft\widgets\PaceWidget::widget() ?>  
+<?= artsoft\widgets\PaceWidget::widget(); ?>  
 <div class="wrap">
 
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
