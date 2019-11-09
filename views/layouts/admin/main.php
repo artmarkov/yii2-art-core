@@ -111,7 +111,8 @@ MetisMenuAsset::register($this);
     </div>
 
 </div>
-
+<!--up button-->
+<?= artsoft\widgets\ScrollupWidget::widget() ?>
 <?php $this->endBody() ?>
 </body>
 </html>
