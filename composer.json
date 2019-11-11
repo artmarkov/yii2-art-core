@@ -15,7 +15,7 @@
     "require": {
         "yiisoft/yii2": "~2.0",        
         "yiisoft/yii2-jui": "~2.0",
-        "bower-asset/metisMenu": "*",
+        "bower-asset/metismenu": "*",
         "bower-asset/pace": "*",
         "omgdef/yii2-multilingual-behavior": "~2.0",
         "rmrevin/yii2-fontawesome": "~2.12",
