@@ -17,6 +17,7 @@ class m151121_091144_i18n_art_source extends SourceMessagesMigration
             'Activate' => 1,
             'Active' => 1,
             'Add New' => 1,
+            'Go to list' => 1,
             'All' => 1,
             'Always Visible' => 1,
             'An unknown error occurred.' => 1,
