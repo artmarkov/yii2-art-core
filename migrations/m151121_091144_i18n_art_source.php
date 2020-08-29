@@ -57,6 +57,7 @@ class m151121_091144_i18n_art_source extends SourceMessagesMigration
             'E-mail' => 1,
             'Edit' => 1,
             'Error' => 1,
+            'Expire' => 1,
             'Failed to flush cache.' => 1,
             'Female' => 1,
             'First Name' => 1,
