@@ -14,6 +14,9 @@ use Yii;
  */
 class Session extends \artsoft\db\ActiveRecord
 {
+    public $status;
+    public $last_attempt;
+
     /**
      * @inheritdoc
      */
@@ -30,7 +33,7 @@ class Session extends \artsoft\db\ActiveRecord
         return [
             [['id'], 'required'],
             [['expire'], 'integer'],
-            [['data'], 'string'],
+            [['data','status','last_attempt'], 'string'],
             [['id'], 'string', 'max' => 255],
         ];
     }
@@ -42,8 +45,9 @@ class Session extends \artsoft\db\ActiveRecord
     {
         return [
             'id' => Yii::t('art', 'ID'),
-            'expire' => Yii::t('art', 'Expire'),
-            'data' => Yii::t('art', 'Data'),
+            'expire' => Yii::t('art/user', 'Expire'),
+            'status' => Yii::t('art', 'Status'),
+            'last_attempt' => Yii::t('art/user', 'Last Attempt'),
         ];
     }
 
@@ -52,39 +56,46 @@ class Session extends \artsoft\db\ActiveRecord
         return SessionDecoder::unserialize($this->getAttribute('data'));
     }
 
-    public static function getList()
+    public function getStatus()
     {
-        $result = [
-            'total' => 0,
-            'active' => 0,
-            'list' => []
-        ];
-        $list = static::find()->orderBy('expire desc')->all();
-        foreach ($list as $v) {
-            /* @var $v Session */
-            $vars = $v->getSessionVars();
-           //echo '<pre>' . print_r($v, true) . '</pre>';
-            /* @var $user User */
-            $user = isset($vars['__id']) ? User::findOne($vars['__id']) : null;
-            $runAt = isset($vars['_last_attempt']) ? $vars['_last_attempt'] : 0;
-            $expired = time() - $v->expire > 0 || $user === null;
-            $current = $v->id == Yii::$app->session->getId();
-            $age = Yii::$app->formatter->asRelativeTime($runAt);
-            $result['list'][] = [
-                'id' => $v->id,
-                'user_id' => isset($vars['__id']) ? $vars['__id'] : 0,
-                'user_name' => $user ? $user->username : '',
-                'run_at' => Yii::$app->formatter->asDateTime($runAt),
-                'ip' => isset($vars['__ipaddr']) ? $vars['__ipaddr'] : '',
-                'status' => $expired ? 'idle' : ($current ? 'current' : 'active'),
-                'statusText' => $expired ? 'В ожидании' . ' (' . $age . ')' : ($current ? 'Текущая' : 'Активная' . ' (' . $age . ')')
-            ];
-            //var_dump($runAt);var_dump(Yii::$app->formatter->asRelativeTime($runAt));exit;
-        }
-        $result['total'] = count($result['list']);
-        $result['active'] = count(array_filter($result['list'], function ($v) {
-            return 'idle' !== $v['status'];
-        }));
-        return $result;
+        $vars = $this->getSessionVars();
+        $user = isset($vars['__id']) ? User::findOne($vars['__id']) : null;
+        $expired = time() - $this->expire > 0 || $user === null;
+        $current = $this->id == Yii::$app->session->getId();
+        return $expired ? 'waiting' : ($current ? 'current' : 'active');
     }
+
+    public function getStatusLabel($status)
+    {
+        switch ($status) {
+            case 'waiting':
+                $label = '<span class="label label-warning">' . Yii::t('art/user', 'Waiting') . '</span>';
+                break;
+            case 'current':
+                $label = '<span class="label label-info">' . Yii::t('art/user', 'Current') . '</span>';
+                break;
+            case 'active':
+                $label = '<span class="label label-success">' . Yii::t('art/user', 'Active') . '</span>';
+                break;
+            default:
+                $label = '';
+        }
+        return $label;
+
+    }
+
+    public function getUsername()
+    {
+        $vars = $this->getSessionVars();
+        $user = isset($vars['__id']) ? User::findOne($vars['__id']) : null;
+
+        return $user ? $user->username : '';
+    }
+
+    public function getLastAttempt()
+    {
+        $vars = $this->getSessionVars();
+        return isset($vars['_last_attempt']) ? $vars['_last_attempt'] : null;
+    }
+
 }
