@@ -34,6 +34,8 @@ use yii\helpers\Html;
 class Nav extends \yii\bootstrap\Nav
 {
 
+    public $activeClass = 'mm-active';
+
     public function init()
     {
         parent::init();
@@ -120,7 +122,7 @@ class Nav extends \yii\bootstrap\Nav
         $url = ArrayHelper::getValue($item, 'url', '#');
         $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
 
-        if (isset($item['mm-active'])) {
+        if (isset($item[$this->activeClass])) {
             $active = ArrayHelper::remove($item, 'active', false);
         } else {
             $active = $this->isItemActive($item);
@@ -142,7 +144,7 @@ class Nav extends \yii\bootstrap\Nav
         }
 
         if ($this->activateItems && $active) {
-            Html::addCssClass($options, 'mm-active');
+            Html::addCssClass($options, $this->activeClass);
         }
 
         return Html::tag('li', Html::a($label, $url, $linkOptions) . $items,

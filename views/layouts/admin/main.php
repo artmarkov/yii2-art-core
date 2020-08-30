@@ -28,8 +28,8 @@ MetisMenuAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() ?>    
-<?= artsoft\widgets\PaceWidget::widget(); ?>  
+<?php $this->beginBody() ?>
+<?= artsoft\widgets\PaceWidget::widget(); ?>
 <div class="wrap">
 
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -69,7 +69,7 @@ MetisMenuAsset::register($this);
         ]);
 
         echo LanguageSelector::widget(['display' => 'label']);
-        
+
         NavBar::end();
         ?>
 
@@ -101,10 +101,27 @@ MetisMenuAsset::register($this);
                             ],
                         ]
                     ]);
-                    ?>  
+                    ?>
                     <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]) ?>
-                    
-                    <?= $content ?>
+                    <?php if ($this->params['tabMenuId']): ?>
+                        <div class="nav-tabs-custom">
+                            <?= \artsoft\widgets\Nav::widget([
+                                'encodeLabels' => false,
+                                'activeClass' => 'active',
+                                'options' => [
+                                    ['class' => 'nav nav-tabs'],
+                                    ['class' => 'dropdown-menu'],
+                                ],
+                                'items' => Menu::getMenuItems($this->params['tabMenuId']),
+                            ]) ?>
+
+                            <div class="tab-content">
+                                <?= $content ?>
+                            </div>
+                        </div>
+                    <?php else: ?>
+                        <?= $content ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
