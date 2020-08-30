@@ -89,7 +89,15 @@ abstract class BaseController extends \artsoft\controllers\BaseController
      *
      * @var string
      */
+
     public $updateView = 'update';
+    
+    /**
+     * TabMenu element
+     *
+     * @var bool
+     */
+    public $tabMenuId = false;
 
     public function behaviors()
     {
@@ -109,6 +117,7 @@ abstract class BaseController extends \artsoft\controllers\BaseController
      */
     public function actionIndex()
     {
+        $this->view->params['tabMenuId'] = $this->tabMenuId;
         $modelClass = $this->modelClass;
         $searchModel = $this->modelSearchClass ? new $this->modelSearchClass : null;
         $restrictAccess = (ArtHelper::isImplemented($modelClass, OwnerAccess::CLASSNAME)
@@ -140,6 +149,7 @@ abstract class BaseController extends \artsoft\controllers\BaseController
      */
     public function actionView($id)
     {
+        $this->view->params['tabMenuId'] = $this->tabMenuId;
         return $this->renderIsAjax($this->viewView, [
             'model' => $this->findModel($id),
         ]);
@@ -152,6 +162,8 @@ abstract class BaseController extends \artsoft\controllers\BaseController
      */
     public function actionCreate()
     {
+        $this->view->params['tabMenuId'] = $this->tabMenuId;
+
         /* @var $model \artsoft\db\ActiveRecord */
         $model = new $this->modelClass;
 
@@ -173,6 +185,8 @@ abstract class BaseController extends \artsoft\controllers\BaseController
      */
     public function actionUpdate($id)
     {
+        $this->view->params['tabMenuId'] = $this->tabMenuId;
+
         /* @var $model \artsoft\db\ActiveRecord */
         $model = $this->findModel($id);
 
