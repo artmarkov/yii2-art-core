@@ -3,6 +3,7 @@
 namespace artsoft\controllers;
 
 use artsoft\behaviors\AccessFilter;
+use artsoft\models\Request;
 use Yii;
 use yii\web\Controller;
 use yii\web\Cookie;
@@ -116,5 +117,23 @@ abstract class BaseController extends Controller
         } else {
             return $this->render($view, $params);
         }
+    }
+
+    /**
+     * @param $action
+     * @return bool
+     * @throws \Throwable
+     * @throws \yii\web\BadRequestHttpException
+     */
+    public function beforeAction($action)
+    {
+        $session = Yii::$app->session;
+        $session['__ipaddr'] = Yii::$app->request->userIP;
+        $session['__run_at'] = time();
+        if (!Yii::$app->getUser()->isGuest) {
+            Request::register(Yii::$app->request,Yii::$app->user);
+            register_shutdown_function(array('\artsoft\models\Request', 'close'));
+        }
+        return parent::beforeAction($action);
     }
 }

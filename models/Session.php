@@ -15,7 +15,8 @@ use Yii;
 class Session extends \artsoft\db\ActiveRecord
 {
     public $status;
-    public $last_attempt;
+    public $ip;
+    public $run_at;
 
     /**
      * @inheritdoc
@@ -33,7 +34,7 @@ class Session extends \artsoft\db\ActiveRecord
         return [
             [['id'], 'required'],
             [['expire'], 'integer'],
-            [['data','status','last_attempt'], 'string'],
+            [['data','status','ip','run_at'], 'string'],
             [['id'], 'string', 'max' => 255],
         ];
     }
@@ -92,10 +93,15 @@ class Session extends \artsoft\db\ActiveRecord
         return $user ? $user->username : '';
     }
 
-    public function getLastAttempt()
+    public function getIP()
     {
         $vars = $this->getSessionVars();
-        return isset($vars['_last_attempt']) ? $vars['_last_attempt'] : null;
+        return isset($vars['__ipaddr']) ? $vars['__ipaddr'] : null;
+    }
+    public function getRunAt()
+    {
+        $vars = $this->getSessionVars();
+        return isset($vars['__run_at']) ? $vars['__run_at'] : null;
     }
 
 }
