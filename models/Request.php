@@ -24,6 +24,7 @@ class Request extends \yii\db\ActiveRecord
      */
     public static $request;
     public static $startTime;
+
     /**
      * @inheritdoc
      */
@@ -53,13 +54,13 @@ class Request extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('art','ID'),
-            'created_at' => Yii::t('art/user','Request time'),
-            'url' => Yii::t('art','URL'),
-            'post' => Yii::t('art/user','POST'),
-            'time' => Yii::t('art/user','Time(s)'),
-            'mem_usage_mb' => Yii::t('art/user','Mem'),
-            'http_status' => Yii::t('art/user','HTTP status'),
+            'id' => Yii::t('art', 'ID'),
+            'created_at' => Yii::t('art/user', 'Request time'),
+            'url' => Yii::t('art', 'URL'),
+            'post' => Yii::t('art/user', 'POST'),
+            'time' => Yii::t('art/user', 'Time(s)'),
+            'mem_usage_mb' => Yii::t('art/user', 'Mem'),
+            'http_status' => Yii::t('art/user', 'HTTP status'),
         ];
     }
 
@@ -69,34 +70,40 @@ class Request extends \yii\db\ActiveRecord
      * @param \yii\web\User $user
      * @throws \Throwable
      */
-    public static function register($request,$user) {
+    public static function register($request, $user)
+    {
+        if (!$request->isPost) {
+            return;
+        }
         /* @var $o Request */
         $o = Yii::createObject([
             'class' => Request::class,
             'created_at' => new Expression('NOW()'),
             'user_id' => $user->getIdentity()->getId(),
             'url' => $request->getUrl(),
-            'post' => $request->isPost ? json_encode($request->post(),JSON_UNESCAPED_UNICODE) : null,
+            'post' => $request->isPost ? json_encode($request->post(), JSON_UNESCAPED_UNICODE) : null,
         ]);
         if (!$o->save()) {
-            throw new \RuntimeException('can\t register request: '.implode(',',$o->getFirstErrors()));
+            throw new \RuntimeException('can\t register request: ' . implode(',', $o->getFirstErrors()));
         }
         self::$startTime = microtime(true);
         self::$request = $o;
     }
 
-    public static function close() {
+    public static function close()
+    {
         if (null === self::$request || null == Yii::$app) {
             return;
         }
         $o = self::$request;
         $o->time = self::getTimeSpent();
-        $o->mem_usage_mb = memory_get_peak_usage(true)/1048576.;
+        $o->mem_usage_mb = memory_get_peak_usage(true) / 1048576.;
         $o->http_status = Yii::$app->response->getStatusCode();
         $o->save();
     }
 
-    public static function getTimeSpent() {
+    public static function getTimeSpent()
+    {
         return microtime(true) - self::$startTime;
     }
 
